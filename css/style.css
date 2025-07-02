@@ -954,3 +954,14 @@
     background: var(--bs-dark) !important;
 }
 /*** copyright end ***/
+.header-container {
+    display: flex; /* Makes the container a flex container */
+    align-items: center; /* Vertically aligns items in the center */
+    /* Optional: Add spacing between items */
+    gap: 10px; /* Provides a gap of 10px between the image and the heading */
+}
+
+/* Optional: Adjust heading margin if m-0 isn't sufficient */
+.header-container h1 {
+    margin: 0; /* Ensures no extra margin pushes items apart */
+}
