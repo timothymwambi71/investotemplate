@@ -1,3 +1,112 @@
+/* At the very top of your styles.css */
+
+/* Import Google Fonts for a more organic feel */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+:root {
+    /* African Sustainable Homes & Nature Color Palette */
+    --bs-primary: #5A7F54; /* A deep, natural, earthy green - for highlights, active states */
+    --bs-primary-rgb: 90, 127, 84;
+
+    --bs-secondary: #A0836F; /* A warm, inviting clay/terracotta brown - for accents, subtle backgrounds */
+    --bs-secondary-rgb: 160, 131, 111;
+
+    --bs-success: #3D8C40; /* A vibrant, healthy green - for success messages, important buttons */
+    --bs-success-rgb: 61, 140, 64;
+
+    --bs-info: #7CA1A2; /* A calm, slightly desaturated teal/blue - for informational elements, soft accents */
+    --bs-info-rgb: 124, 161, 162;
+
+    --bs-warning: #D9B14E; /* A golden yellow like sunlight or dried grass - for warnings, highlights */
+    --bs-warning-rgb: 217, 177, 78;
+
+    --bs-danger: #B3443C; /* A deep, earthy red, reminiscent of natural clay or sunset - for errors, strong calls to action */
+    --bs-danger-rgb: 179, 68, 60;
+
+    --bs-light: #F8F5EE; /* Off-white, like natural fibers or sun-bleached earth - for light backgrounds, text on dark */
+    --bs-light-rgb: 248, 245, 238;
+
+    --bs-dark: #2F3C2C; /* A very dark green/brown, like rich soil or deep shadows - for dark backgrounds, headings */
+    --bs-dark-rgb: 47, 60, 44;
+
+    --bs-white: #FFFFFF; /* Pure white, used sparingly for strong contrast */
+    --bs-gray: #6C757D; /* Keep original gray for default text where custom colors aren't applied */
+    --bs-gray-dark: #343A40; /* Keep original gray-dark */
+
+    /* Custom color for body text - slightly softer than black */
+    --bs-body-color: #4A4A4A;
+
+    /* Font families */
+    --bs-font-sans-serif: 'Ubuntu', sans-serif; /* For general body text, clean and modern */
+    --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --bs-heading-font: 'Lora', serif; /* For headings, a more natural and elegant feel */
+}
+
+/* Apply new fonts and body colors */
+body {
+    font-family: var(--bs-font-sans-serif);
+    color: var(--bs-body-color);
+    background-color: var(--bs-light); /* Use the new light background */
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: var(--bs-heading-font);
+    color: var(--bs-dark); /* Headings should be strong and dark */
+}
+
+/* IMPORTANT: Ensure linked headings use theme colors, not default browser link colors */
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
+.h1 a, .h2 a, .h3 a, .h4 a, .h5 a, .h6 a {
+    color: var(--bs-dark) !important; /* Default color for linked headings */
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover,
+.h1 a:hover, .h2 a:hover, .h3 a:hover, .h4 a:hover, .h5 a:hover, .h6 a:hover {
+    color: var(--bs-primary) !important; /* Hover color for linked headings */
+}
+
+/* Default link styles (for non-heading links) */
+a {
+    color: var(--bs-primary); /* Links use primary color */
+}
+
+a:hover {
+    color: var(--bs-success); /* Hover links use success color */
+}
+
+/* Adjust form control focus color to match new primary */
+.form-control:focus {
+    border-color: color-mix(in srgb, var(--bs-primary) 50%, transparent); /* Blend primary for a subtle focus border */
+    box-shadow: 0 0 0 .25rem rgba(var(--bs-primary-rgb),.25);
+}
+
+.form-check-input:checked {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+
+.form-check-input:checked[type=checkbox] {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+}
+
+.form-check-input:checked[type=radio] {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
+}
+
+.form-range::-webkit-slider-thumb {
+    background-color: var(--bs-primary);
+}
+
+.form-range::-moz-range-thumb {
+    background-color: var(--bs-primary);
+}
+
+.form-range:focus::-webkit-slider-thumb {
+    box-shadow:0 0 0 1px var(--bs-white),0 0 0 .25rem rgba(var(--bs-primary-rgb),.25);
+}
+.form-range:focus::-moz-range-thumb {
+    box-shadow:0 0 0 1px var(--bs-white),0 0 0 .25rem rgba(var(--bs-primary-rgb),.25);
+}
 
 /*** Spinner Start ***/
 /*** Spinner ***/
@@ -32,6 +141,7 @@
 .btn {
     font-weight: 600;
     transition: .5s;
+    border-radius: 10px; /* Softer, more natural button corners */
 }
 
 .btn-square {
@@ -75,7 +185,7 @@
 .btn.btn-primary {
     background: var(--bs-primary) !important;
     color: var(--bs-white) !important;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif; /* Or var(--bs-font-sans-serif) */
     border: none;
     font-weight: 400;
     transition: 0.5s;
@@ -89,7 +199,7 @@
 .btn.btn-dark {
     background: var(--bs-dark) !important;
     color: var(--bs-white) !important;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif; /* Or var(--bs-font-sans-serif) */
     border: none;
     font-weight: 400;
     transition: 0.5s;
@@ -103,7 +213,7 @@
 .btn.btn-light {
     background: var(--bs-primary) !important;
     color: var(--bs-white) !important;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif; /* Or var(--bs-font-sans-serif) */
     border: none;
     font-weight: 400;
     transition: 0.5s;
@@ -113,6 +223,8 @@
     background: var(--bs-white) !important;
     color: var(--bs-dark) !important;
 }
+/*** Button End ***/
+
 /*** Topbar Start ***/
 .topbar {
     padding: 2px 10px 2px 20px;
@@ -235,7 +347,7 @@
 }
 
 #searchModal .modal-content {
-    background: rgba(250, 250, 250, .6);
+    background: rgba(var(--bs-light-rgb), .8); /* Use your light color with transparency */
 }
 /*** Navbar End ***/
 
@@ -294,7 +406,7 @@
     top: -300px;
     right: -300px;
     border-radius: 300px;
-    border: 100px solid rgba(68, 210, 246, 0.2);
+    border: 100px solid rgba(var(--bs-primary-rgb), 0.2); /* Use new primary with transparency */
     animation: RotateMoveCircle 10s linear infinite;
     background: transparent;
     z-index: 2 !important;
@@ -317,7 +429,7 @@
     top: -150px;
     left: 70px;
     transform: rotate(-30deg);
-    background: rgba(68, 210, 246, 0.2);
+    background: rgba(var(--bs-primary-rgb), 0.2); /* Use new primary with transparency */
     animation: RotateMoveRight 5s linear infinite;
     z-index: 2 !important;
 }
@@ -355,7 +467,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.5); /* Can adjust to rgba(var(--bs-dark-rgb), 0.5) if preferred */
     z-index: 2 !important;
 }
 
@@ -398,7 +510,7 @@
 .bg-breadcrumb {
     position: relative;
     overflow: hidden;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/carousel-1.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/african-nature-hero.jpg); /* REPLACE with your nature image path */
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -432,7 +544,7 @@
     top: -150px;
     right: -150px;
     border-radius: 200px;
-    border: 80px solid rgba(68, 210, 246, 0.2);
+    border: 80px solid rgba(var(--bs-primary-rgb), 0.2); /* Use new primary with transparency */
     animation: RotateMoveCircle 10s linear infinite;
     background: transparent;
     z-index: 2 !important;
@@ -455,7 +567,7 @@
     left: 0;
     margin-left: 160px;
     transform: rotate(-30deg);
-    background: rgba(68, 210, 246, 0.2);
+    background: rgba(var(--bs-primary-rgb), 0.2); /* Use new primary with transparency */
     animation: RotateMoveRight 5s linear infinite;
     z-index: 2 !important;
 }
@@ -507,7 +619,7 @@
     right: 0;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    background: rgba(68, 210, 246, 0.4);
+    background: rgba(var(--bs-primary-rgb), 0.4); /* Use new primary with transparency */
     transition: 0.5s;
 }
 
@@ -551,12 +663,12 @@
 }
 
 .service .service-item:hover .service-content .service-content-inner a.h4 {
-    color: var(--bs-white) !important;
+    color: var(--bs-white) !important; /* Ensures h4 is white when the service item is hovered */
     transition: 0.5s;
 }
 
 .service .service-item:hover .service-content .service-content-inner a.h4:hover {
-    color: var(--bs-primary) !important;
+    color: var(--bs-primary) !important; /* When the h4 itself is hovered, it turns your primary green */
 }
 /*** Service End ***/
 
@@ -584,7 +696,7 @@
     top: 0;
     left: 0;
     border-radius: 10px;
-    background: rgba(68, 210, 246, 0.4);
+    background: rgba(var(--bs-primary-rgb), 0.4); /* Use new primary with transparency */
     transition: 0.5s;
 }
 
@@ -635,7 +747,7 @@
 }
 
 .project .project-carousel .project-item:hover .project-content .project-content-inner a.h4:hover {
-    color: var(--bs-primary) !important;
+    color: var(--bs-primary) !important; /* When the h4 itself is hovered, it turns your primary green */
 }
 
 .project .project-carousel .project-item:hover .project-content::after {
@@ -658,7 +770,7 @@
     height: 20px;
     border-radius: 20px;
     margin-right: 15px;
-    background: var(--bs-dark);
+    background: var(--bs-secondary); /* A good place for secondary color */
     transition: 0.5s;
 }
 
@@ -689,7 +801,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: rgba(68, 210, 246, 0.2);
+    background: rgba(var(--bs-primary-rgb), 0.2); /* Use new primary with transparency */
     transition: 0.5s;
     opacity: 0;
 }
@@ -712,7 +824,7 @@
 .team .team-item {
     position: relative;
     overflow: hidden;
-    border: 1px solid var(--bs-dark);
+    border: 1px solid var(--bs-secondary); /* Use secondary for the initial border */
     transition: 0.5s;
 }
 
@@ -771,7 +883,7 @@
     left: 0;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    background: rgba(68, 210, 246, 0.2);
+    background: rgba(var(--bs-primary-rgb), 0.2); /* New primary with transparency */
     transition: 0.5s;
 }
 
@@ -848,7 +960,7 @@
 }
 
 .team .team-item:hover .team-content .team-content-inner h4 {
-    color: var(--bs-dark) !important;
+    color: var(--bs-dark) !important; /* h4 turns your dark earthy color when the team item is hovered */
 }
 /*** Team End ***/
 
@@ -895,8 +1007,10 @@
     position: absolute;
     top: 0;
     right: 0;
-    background-image: url(../img/bg.png);
+    background-image: url(../img/natural-texture-bg.png); /* REPLACE with your nature-inspired texture or pattern */
     object-fit: cover;
+    background-size: cover; /* Or 'contain', 'repeat' depending on the image */
+    opacity: 0.5; /* Adjust opacity as needed */
     z-index: -1;
 }
 
@@ -918,7 +1032,7 @@
 }
 .footer .footer-item a {
     line-height: 35px;
-    color: var(--bs-body);
+    color: var(--bs-body-color);
     transition: 0.5s;
 }
 
