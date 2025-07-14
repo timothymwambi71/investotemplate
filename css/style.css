@@ -1083,3 +1083,30 @@ a:hover {
     margin: 0; /* Ensures no extra margin pushes items apart */
 }
 
+/* Add to your CSS file (e.g., css/style.css) */
+@media (max-width: 576px) {
+    .project-content {
+        padding: 1rem !important;
+    }
+    .project-content-inner {
+        padding: 0 !important;
+    }
+    .project-icon i {
+        font-size: 2.5rem !important;
+    }
+    .project-content-inner .fs-5,
+    .project-content-inner .h4,
+    .project-content-inner p,
+    .project-content-inner a {
+        font-size: 1rem !important;
+        line-height: 1.4 !important;
+        word-break: break-word;
+    }
+    .project-content-inner .h4 {
+        font-size: 1.1rem !important;
+    }
+    .btn {
+        padding: 0.5rem 1rem !important;
+        font-size: 0.95rem !important;
+    }
+}
