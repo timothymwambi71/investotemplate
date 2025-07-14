@@ -1110,3 +1110,12 @@ a:hover {
         font-size: 0.95rem !important;
     }
 }
+
+@media (max-width: 576px) {
+    .project-content-inner .pt-4 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 1rem !important;
+    }
+}
