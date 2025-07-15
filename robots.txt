@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://african-sustainable-homes.com/sitemap.xml
